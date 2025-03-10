@@ -1,17 +1,14 @@
-//• Desenvolva um aplicativo que mostre na tela o resultado da
-//expressão 500 + 450 + 400 + 350 + 300 + ... + 50 + 0
+//• Faça um programa que leia 7 números inteiros e no final
+//mostre o somatório entre eles.
 //
-fun main(){
+fun main (){
+    var qtd = 0
     var soma = 0
-    var i = 500
-    while (i >= 0){
-        print(i)
-        soma += i
-
-        if (i > 0){
-            print("+")
-        }
-        i -= 50
+    while (qtd < 7){
+        print("Digite um numero: ")
+        val numero = readLine()!!.toInt()
+        soma += numero
+        qtd ++
     }
-    print("= $soma")
+    print("soma $soma")
 }

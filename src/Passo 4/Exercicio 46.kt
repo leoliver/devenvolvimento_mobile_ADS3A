@@ -1,22 +1,17 @@
-//• O programa acima vai ter um problema quando digitarmos o
-//primeiro valor maior que o último. Resolva esse problema com um
-//código que funcione em qualquer situação.
+//• Crie um programa que calcule e mostre na tela o resultado da
+//soma entre 6 + 8 + 10 + 12 + 14 + ... + 98 + 100.
 //
-fun main() {
-    print("Digite seu primeiro valor: ")
-    var primeiroValor = readLine()!!.toInt()
-    print("Digite seu último valor: ")
-    var ultimoValor = readLine()!!.toInt()
-    print("Digite seu incremento: ")
-    var incremento = readLine()!!.toInt()
+fun main (){
+    var i = 6
+    var soma = 0
+    while (i <= 100){
+        print(i)
+        soma += i
 
-    if (primeiroValor > ultimoValor) {
-        print("Ocorreu um erro!! o primeiro valor não pode ser maior que o ultimo!")
-    }else{
-        while  (primeiroValor <= ultimoValor){
-        print("$primeiroValor ")
-        primeiroValor += incremento
+        if (i < 100){
+            print("+")
+        }
+        i += 2
     }
-    print("Acabou!")
-    }
+    println(" = $soma")
 }

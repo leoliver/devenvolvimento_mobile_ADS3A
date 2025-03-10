@@ -1,17 +1,17 @@
-//• Crie um programa que calcule e mostre na tela o resultado da
-//soma entre 6 + 8 + 10 + 12 + 14 + ... + 98 + 100.
+//• Desenvolva um aplicativo que mostre na tela o resultado da
+//expressão 500 + 450 + 400 + 350 + 300 + ... + 50 + 0
 //
-fun main (){
-    var i = 6
+fun main(){
     var soma = 0
-    while (i <= 100){
+    var i = 500
+    while (i >= 0){
         print(i)
         soma += i
 
-        if (i < 100){
+        if (i > 0){
             print("+")
         }
-        i += 2
+        i -= 50
     }
-    println(" = $soma")
+    print("= $soma")
 }

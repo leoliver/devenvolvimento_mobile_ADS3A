@@ -1,45 +1,44 @@
-//• Faça um programa que leia a idade e o sexo de 5 pessoas,
-//mostrando no final:
-//• Quantos homens foram cadastrados
-//• Quantas mulheres foram cadastradas
-//• A média de idade do grupo
-//• A média de idade dos homens
-//• Quantas mulheres tem mais de 20 anos
+//• Desenvolva um aplicativo que leia o peso e a altura de 7
+//pessoas, mostrando no final:
+//• Qual foi a média de altura do grupo
+//• Quantas pessoas pesam mais de 90Kg
+//• Quantas pessoas que pesam menos de 50Kg tem menos de 1.60m
+//• Quantas pessoas que medem mais de 1.90m pesam mais de
+//100Kg.
 
 fun main() {
-    var Homen = 0
-    var Mulher= 0
-    var somaIdades = 0
-    var somaIdadeHomens = 0
-    var qtdMulheresMais20 = 0
+    var somaAltura = 0
+    var pessoasMais90kg = 0
+    var pessoasMenos50kgMenos160cm = 0
+    var pessoasMais190cmMais100kg = 0
     var qtd = 0
 
-    while (qtd < 5) {
-        print("Digite a idade: ")
-        val idade = readLine()!!.toInt()
+    while (qtd < 7) {
+        print("Digite o peso da pessoa ${qtd + 1} (Kg): ")
+        val peso = readLine()!!.toDouble()
 
-        print("Digite o sexo (M/F): ")
-        val sexo = readLine()!!
+        print("Digite a altura da pessoa ${qtd + 1} (m): ")
+        val altura = readLine()!!.toInt()
 
-        somaIdades += idade
+        somaAltura += altura
 
-        if (sexo == "M" || sexo == "m") {
-            Homen++
-            somaIdadeHomens += idade
-        } else if (sexo == "F" || sexo == "f") {
-            Mulher++
-            if (idade > 20) {
-                qtdMulheresMais20++
-            }
+        if (peso > 90) {
+            pessoasMais90kg++
         }
+        if (peso < 50 && altura < 1.60) {
+            pessoasMenos50kgMenos160cm++
+        }
+        if (altura > 1.90 && peso > 100) {
+            pessoasMais190cmMais100kg++
+        }
+
         qtd++
     }
-    val mediaIdadeGrupo = somaIdades / 5.0
-    val mediaIdadeHomens = if (Homen > 0) somaIdadeHomens / Homen.toDouble() else 0.0
 
-    println("Total de homens cadastrados: $Homen")
-    println("Total de mulheres cadastradas: $Mulher")
-    println("Média de idade do grupo: %.2f".format(mediaIdadeGrupo))
-    println("Média de idade dos homens: %.2f".format(mediaIdadeHomens))
-    println("Mulheres com mais de 20 anos: $qtdMulheresMais20")
+    val mediaAltura = somaAltura / 7
+
+    println("Média de altura do grupo: %.2f m".format(mediaAltura))
+    println("Pessoas com mais de 90Kg: $pessoasMais90kg")
+    println("Pessoas com menos de 50Kg e menos de 1.60m: $pessoasMenos50kgMenos160cm")
+    println("Pessoas com mais de 1.90m e mais de 100Kg: $pessoasMais190cmMais100kg")
 }

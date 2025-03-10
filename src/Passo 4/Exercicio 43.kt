@@ -1,16 +1,16 @@
-//• Faça um algoritmo que pergunte ao usuário um número
-//inteiro e positivo qualquer e mostre uma contagem até esse
-//valor:
-//Ex: Digite um valor: 35
-//Contagem: 1 2 3 4 5 6 7 ... 33 34 35 Acabou!
+//• Desenvolva um algoritmo que mostre uma contagem regressiva de
+//////30 até 1, marcando os números que forem divisíveis por 4,
+//////exatamente como mostrado abaixo:
+//////30 29 [28] 27 26 25 [24] 23 22 21 [20] 19 18 17 [16]...
 
-fun main (){
-    print("Digite um número inteiro positivo: ")
-    val n = readLine()!!.toInt()
-    var i = 1
-    while ( i <= n){
-        println(i)
-        i ++
+fun main(){
+    var i = 30
+    while (i >= 1){
+        if( i % 4 == 0){
+            println("[$i]")
+        }else{
+            println(i)
+        }
+        i --
     }
-    print("Acabou!")
 }

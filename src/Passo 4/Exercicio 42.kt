@@ -1,11 +1,16 @@
-//• Desenvolva um programa que mostre na tela a seguinte contagem:
-//100 95 90 85 80 ... 0 Acabou!
+//• Faça um algoritmo que pergunte ao usuário um número
+//inteiro e positivo qualquer e mostre uma contagem até esse
+//valor:
+//Ex: Digite um valor: 35
+//Contagem: 1 2 3 4 5 6 7 ... 33 34 35 Acabou!
 
 fun main (){
-    var i = 100
-    while (i >= 80){
+    print("Digite um número inteiro positivo: ")
+    val n = readLine()!!.toInt()
+    var i = 1
+    while ( i <= n){
         println(i)
-        i -= 5
+        i ++
     }
     print("Acabou!")
 }

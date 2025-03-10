@@ -1,38 +1,45 @@
-//• Crie um algoritmo que leia a idade de 10 pessoas, mostrando no
-//final:
-//• Qual é a média de idade do grupo
-//• Quantas pessoas tem mais de 18 anos
-//• Quantas pessoas tem menos de 5 anos
-//• Qual foi a maior idade lida
+//• Faça um programa que leia a idade e o sexo de 5 pessoas,
+//mostrando no final:
+//• Quantos homens foram cadastrados
+//• Quantas mulheres foram cadastradas
+//• A média de idade do grupo
+//• A média de idade dos homens
+//• Quantas mulheres tem mais de 20 anos
 
-fun main(){
-    var mais18 = 0
-    var menos5 = 0
-    var somaIdade = 0
-    var maiorDeIdade = 0
+fun main() {
+    var Homen = 0
+    var Mulher= 0
+    var somaIdades = 0
+    var somaIdadeHomens = 0
+    var qtdMulheresMais20 = 0
     var qtd = 0
 
-    while(qtd <= 10){
-        print("Digite sua idade: ")
-        val idade = readln()!!.toInt()
-        somaIdade  += idade
+    while (qtd < 5) {
+        print("Digite a idade: ")
+        val idade = readLine()!!.toInt()
 
-        if(idade >= 18){
-            mais18 ++
-        }
+        print("Digite o sexo (M/F): ")
+        val sexo = readLine()!!
 
-        if(idade < 5){
-            menos5 ++
-        }
+        somaIdades += idade
 
-        if(idade > maiorDeIdade){
-            maiorDeIdade = idade
+        if (sexo == "M" || sexo == "m") {
+            Homen++
+            somaIdadeHomens += idade
+        } else if (sexo == "F" || sexo == "f") {
+            Mulher++
+            if (idade > 20) {
+                qtdMulheresMais20++
+            }
         }
         qtd++
     }
-    val media = somaIdade.toDouble() / qtd
-    println("Media de idade do grupo de pessoas: $media")
-    println("Quantidade de pessoas com maior de 18 anos: $mais18")
-    println("Quantidade de pessoas menores de 5 anos: $menos5")
-    println("Maior idade citada: $maiorDeIdade")
+    val mediaIdadeGrupo = somaIdades / 5.0
+    val mediaIdadeHomens = if (Homen > 0) somaIdadeHomens / Homen.toDouble() else 0.0
+
+    println("Total de homens cadastrados: $Homen")
+    println("Total de mulheres cadastradas: $Mulher")
+    println("Média de idade do grupo: %.2f".format(mediaIdadeGrupo))
+    println("Média de idade dos homens: %.2f".format(mediaIdadeHomens))
+    println("Mulheres com mais de 20 anos: $qtdMulheresMais20")
 }

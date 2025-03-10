@@ -1,14 +1,19 @@
-//• Faça um programa que leia 7 números inteiros e no final
-//mostre o somatório entre eles.
+//• Crie um programa que leia 6 números inteiros e no final mostre
+//quantos deles são pares e quantos são ímpares.
 //
-fun main (){
-    var qtd = 0
-    var soma = 0
-    while (qtd < 7){
-        print("Digite um numero: ")
+fun main(){
+    var par = 0
+    var impar = 0
+    var qtd = 1
+    while (qtd <= 6){
+        print("Digte um numero inteiro: ")
         val numero = readLine()!!.toInt()
-        soma += numero
+        if (numero %2 == 0){
+            par += 1
+        }else{
+            impar += 1
+        }
         qtd ++
     }
-    print("soma $soma")
+    print("numeros impares: $impar numeros pares: $par")
 }

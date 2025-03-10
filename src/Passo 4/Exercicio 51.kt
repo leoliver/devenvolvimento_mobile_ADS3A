@@ -1,30 +1,24 @@
+//• Faça um aplicativo que leia o preço de 8 produtos. No final,
+//mostre na tela qual foi o maior e qual foi o menor preço
+//digitados.
 
-//• Desenvolva um programa que faça o sorteio de 20 números
-//entre 0 e 10 e mostre na tela:
-//
-//• Quais foram os números sorteados
-//• Quantos números estão acima de 5
-//• Quantos números são divisíveis por 3
+fun main (){
+    var maiorPreco: Int? = null
+    var menorPreco: Int? = null
+    var qtd = 1
+    while (qtd < 9){
+        print("Digite o preço do produto $qtd: ")
+        val preço =  readLine()!!.toInt()
 
-import kotlin.random.Random
-
-fun main(){
-    var numerosAcimaDe5 = 0
-    var numerosDivisiveisPor3 = 0
-    var qtd = 0
-    while (qtd < 20){
-        val numero = Random.nextInt(0 , 11)
-        println("numero aleatório: $numero ")
-
-        if (numero >  5){
-            numerosAcimaDe5 ++
+        if(maiorPreco == null || preço > maiorPreco){
+            maiorPreco = preço
         }
 
-        if (numero %3 ==0 ){
-            numerosDivisiveisPor3 ++
+        if(menorPreco == null || preço < menorPreco){
+            menorPreco  = preço
         }
         qtd ++
     }
-    println("Numero acima de 5: $numerosAcimaDe5")
-    println("Numero dividido por 3: $numerosDivisiveisPor3")
+    println("Maior preço : $maiorPreco")
+    println("Menor preço : $menorPreco")
 }
